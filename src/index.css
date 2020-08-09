@@ -1,0 +1,154 @@
+.App {
+  margin-left: auto;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #004882;
+}
+.dropdownPosition {
+  margin-left: 400px;
+  margin-top: 20%;
+}
+
+/* styling for hover button */
+.hoverButton {
+  margin-top: 40px;
+}
+.hoverButton button {
+  position: relative;
+
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  width: 250px;
+}
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+/* styling for bottom arrow tooltip  */
+.tooltiptext.bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+/* styling for top arrow tooltip  */
+.tooltiptext.top::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+/* styling for right arrow tooltip  */
+.tooltiptext.right::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+/* styling for left arrow tooltip  */
+.tooltiptext.left::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%; /* To the right of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+
+.hoverButton button:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* defining position of tooltip according to the props */
+.top {
+  top: -35px;
+}
+.right {
+  right: -125px;
+  top: 7px;
+}
+.left {
+  left: -125px;
+  top: 7px;
+}
+.bottom {
+  bottom: -35px;
+}
+
+/* Styling of select menu */
+/* The container must be positioned relative: */
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box select {
+  background-color: #0563af;
+  color: white;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.box::before {
+  content: "\f13a";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  /* background-color: rgba(255, 255, 255, 0.2); */
+}
+
+.box select option {
+  padding: 30px;
+}
